@@ -25,6 +25,8 @@
 		A3E746D41A58165E00E85D84 /* TweetsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E746D31A58165E00E85D84 /* TweetsFetcher.swift */; };
 		A3E746D61A5819C900E85D84 /* HatebuFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E746D51A5819C900E85D84 /* HatebuFetcher.swift */; };
 		A3E746D81A5819F300E85D84 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E746D71A5819F300E85D84 /* Utility.swift */; };
+		A3E746E01A582DE800E85D84 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E746DF1A582DE800E85D84 /* Alamofire.framework */; };
+		A3E746E11A582DE800E85D84 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3E746DF1A582DE800E85D84 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A3C7CBB01A57007F00CA6696 /* SwifteriOS.framework in Embed Frameworks */,
+				A3E746E11A582DE800E85D84 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +76,7 @@
 		A3E746D31A58165E00E85D84 /* TweetsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsFetcher.swift; sourceTree = "<group>"; };
 		A3E746D51A5819C900E85D84 /* HatebuFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatebuFetcher.swift; sourceTree = "<group>"; };
 		A3E746D71A5819F300E85D84 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		A3E746DF1A582DE800E85D84 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C7CB9D1A539A7C00CA6696 /* Social.framework in Frameworks */,
+				A3E746E01A582DE800E85D84 /* Alamofire.framework in Frameworks */,
 				A3C7CB9B1A539A6D00CA6696 /* CoreData.framework in Frameworks */,
 				A3C7CB991A539A5300CA6696 /* Twitter.framework in Frameworks */,
 				A3C7CB971A539A4A00CA6696 /* Accounts.framework in Frameworks */,
@@ -162,6 +167,7 @@
 		A3C7CB9E1A56476700CA6696 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A3E746DF1A582DE800E85D84 /* Alamofire.framework */,
 				A3C7CBAE1A57007F00CA6696 /* SwifteriOS.framework */,
 				A3C7CB9C1A539A7C00CA6696 /* Social.framework */,
 				A3C7CB9A1A539A6D00CA6696 /* CoreData.framework */,

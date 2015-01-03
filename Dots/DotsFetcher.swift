@@ -21,6 +21,7 @@ class DotsFetcher {
     }
     
     class func fetchHatenaBookmark() {
+        HatebuFetcher.fetch()
     }
     
     //    class func fetchGoogleHistory() {

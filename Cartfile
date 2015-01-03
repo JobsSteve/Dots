@@ -1,4 +1,4 @@
 github "SwiftyJSON/SwiftyJSON" >= 2.1.2
 github "mattdonnelly/Swifter"
 github "Alamofire/Alamofire"
-
+github "drmohundro/SWXMLHash"
