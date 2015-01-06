@@ -1,6 +1,7 @@
 # Created by https://www.gitignore.io
 
 PrivateConstants.swift
+README.org
 
 ### Xcode ###
 build/
