@@ -2,29 +2,34 @@
 //  DotsFetcher.swift
 //  Dots
 //
-//  Created by Kouno, Masayuki on 1/2/15.
-//  Copyright (c) 2015 Kouno, Masayuki. All rights reserved.
+//  Created by knmsyk on 1/2/15.
+//  Copyright (c) 2015 knmsyk. All rights reserved.
 //
 
 import Foundation
+import Timepiece
 
 class DotsFetcher {
     
-    class func fetchAll() {
-        self.fetchTweets()
-        self.fetchHatenaBookmark()
-    }
-    
-    class func fetchTweets() {
+    class func fetch() {
         let tweetsFetcher = TweetsFetcher()
         tweetsFetcher.setUpTwitterAccount()
-    }
-    
-    class func fetchHatenaBookmark() {
-        HatebuFetcher.fetch()
+        
+        let today = NSDate.today()
+        for day in [1, 3, 7, 30] {
+            let ago = today - day.days
+            HatebuFetcher.fetchData(ago)
+            BloggerFetcher.fetchData(ago)
+        }
     }
     
     //    class func fetchGoogleHistory() {
     //    }
-    
+
+    //    class func fetchQiita() {
+    //    }
+
+    //    class func fetchEvernote() {
+    //    }
+
 }

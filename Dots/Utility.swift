@@ -2,8 +2,8 @@
 //  Utility.swift
 //  Dots
 //
-//  Created by Kouno, Masayuki on 8/2/14.
-//  Copyright (c) 2014 Kouno, Masayuki. All rights reserved.
+//  Created by knmsyk on 8/2/14.
+//  Copyright (c) 2014 knmsyk. All rights reserved.
 //
 
 import Foundation

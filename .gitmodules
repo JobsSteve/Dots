@@ -1,3 +1,14 @@
 [submodule "SWXMLHash"]
 	path = SWXMLHash
 	url = https://github.com/drmohundro/SWXMLHash.git
+[submodule "Carthage/Checkouts/Alamofire"]
+	url = https://github.com/Alamofire/Alamofire.git
+[submodule "Carthage/Checkouts/Timepiece"]
+	path = Carthage/Checkouts/Timepiece
+	url = https://github.com/naoty/Timepiece.git
+[submodule "Carthage/Checkouts/Swifter"]
+	url = https://github.com/mattdonnelly/Swifter.git
+[submodule "Carthage/Checkouts/SwiftyJSON"]
+	url = https://github.com/SwiftyJSON/SwiftyJSON.git
+[submodule "Carthage/Checkouts/QueryKit"]
+	url = https://github.com/QueryKit/QueryKit.git

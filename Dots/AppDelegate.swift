@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Dots
 //
-//  Created by Kouno, Masayuki on 12/31/14.
-//  Copyright (c) 2014 Kouno, Masayuki. All rights reserved.
+//  Created by knmsyk on 12/31/14.
+//  Copyright (c) 2014 knmsyk. All rights reserved.
 //
 
 import UIKit

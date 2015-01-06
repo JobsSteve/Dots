@@ -2,8 +2,8 @@
 //  TweetsFetcher.swift
 //  Dots
 //
-//  Created by Kouno, Masayuki on 1/2/15.
-//  Copyright (c) 2015 Kouno, Masayuki. All rights reserved.
+//  Created by knmsyk on 1/2/15.
+//  Copyright (c) 2015 knmsyk. All rights reserved.
 //
 
 import UIKit
@@ -15,17 +15,14 @@ import CoreData
 class TweetsFetcher: NSObject {
     
     var swifter: Swifter
+    let fetchCounts = 30
     
     required override init() {
-        self.swifter = Swifter(consumerKey: "RErEmzj7ijDkJr60ayE2gjSHT", consumerSecret: "SbS0CHk11oJdALARa7NDik0nty4pXvAxdt7aj0R5y1gNzWaNEx")
+        self.swifter = Swifter(consumerKey: Constants.Twitter.ConsumerKey, consumerSecret: Constants.Twitter.SecretKey)
         super.init()
     }
 
     func setUpTwitterAccount() {
-        // TODO: if already have twitter account
-        // return
-        
-        // else
         let accountStore = ACAccountStore()
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         
@@ -39,20 +36,38 @@ class TweetsFetcher: NSObject {
             if twitterAccounts.count == 0 {
                 println("No Twitter accounts.")
             } else {
-                let twitterAccount = twitterAccounts[0] as ACAccount
-                self.swifter = Swifter(account: twitterAccount)
-                self.fetchAll()
+                for twitterAccount in twitterAccounts {
+                    let twitterAccount = twitterAccount as ACAccount
+                    self.swifter = Swifter(account: twitterAccount)
+                    self.fetch()
+                }
             }
         }
     }
     
-    func fetchAll() {
+    func fetch() {
         fetchFavorites()
         fetchOwnTweets()
     }
     
     func fetchOwnTweets() {
+        let failureHandler: ((NSError) -> Void) = {
+            error in
+            println("Error:" + error.localizedDescription)
+        }
         
+        if let t = self.swifter.client.credential?.account {
+            let properties = t.valueForKey("properties") as NSDictionary
+            let userId = properties["user_id"] as String
+            self.swifter.getStatusesUserTimelineWithUserID(userId, count: fetchCounts, sinceID: nil, maxID: nil, trimUser: false, contributorDetails: false, includeEntities: true, success: {
+                (statuses: [JSONValue]?) in
+                
+                if let statuses = statuses {
+                    self.parseTweets(statuses)
+                };
+                
+                }, failure: failureHandler)
+        }
     }
     
     func fetchFavorites() {
@@ -61,40 +76,42 @@ class TweetsFetcher: NSObject {
             println("Error:" + error.localizedDescription)
         }
         
-        self.swifter.getFavoritesListWithCount(20, sinceID: nil, maxID: nil, success: {
+        self.swifter.getFavoritesListWithCount(fetchCounts, sinceID: nil, maxID: nil, success: {
             (statuses: [JSONValue]?) in
             
             if let statuses = statuses {
-                let delegate = UIApplication.sharedApplication().delegate as AppDelegate
-                let className = "Item"
-                var error: NSError?
-                let fetchRequest = NSFetchRequest(entityName:className)
-                outerLoop: for status: JSONValue in statuses {
-                    let id = status["id_str"].string!
-                    fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-                    let results = delegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
-                    for resultItem in results! {
-                        let item = resultItem as Item
-                        continue outerLoop
-                    }
-                    
-                    var item: Item = NSEntityDescription.insertNewObjectForEntityForName(className, inManagedObjectContext: delegate.managedObjectContext!) as Item
-                    item.id = id
-                    item.text = status["text"].string!
-                    if status["entities"]["urls"][0] {
-                        item.url = status["entities"]["urls"][0]["expanded_url"].string!
-                    }
-                    if status["entities"]["media"][0] {
-                        item.picture = status["entities"]["media"][0]["media_url"].string!
-                    }
-                    item.date = NSDate()
-                    
-                    println(status)
-                }
-                delegate.saveContext()
+                self.parseTweets(statuses)
             };
             
             }, failure: failureHandler)
     }
     
+    func parseTweets(statuses: [JSONValue]) {
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let className = "Item"
+        var error: NSError?
+        let fetchRequest = NSFetchRequest(entityName:className)
+        
+        outerLoop: for status: JSONValue in statuses {
+            let id = status["id_str"].string!
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+            let results = delegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
+            for resultItem in results! {
+                let item = resultItem as Item
+                continue outerLoop
+            }
+            
+            var item: Item = NSEntityDescription.insertNewObjectForEntityForName(className, inManagedObjectContext: delegate.managedObjectContext!) as Item
+            item.id = id
+            item.text = status["text"].string!
+            if status["entities"]["urls"][0] {
+                item.url = status["entities"]["urls"][0]["expanded_url"].string!
+            }
+            if status["entities"]["media"][0] {
+                item.picture = status["entities"]["media"][0]["media_url"].string!
+            }
+            item.date = NSDate()
+        }
+        delegate.saveContext()
+    }
 }

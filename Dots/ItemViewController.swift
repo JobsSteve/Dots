@@ -2,8 +2,8 @@
 //  ItemViewController.swift
 //  Dots
 //
-//  Created by Kouno, Masayuki on 12/31/14.
-//  Copyright (c) 2014 Kouno, Masayuki. All rights reserved.
+//  Created by knmsyk on 12/31/14.
+//  Copyright (c) 2014 knmsyk. All rights reserved.
 //
 
 import UIKit
@@ -25,12 +25,14 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        DotsFetcher.fetchAll()
+        DotsFetcher.fetch()
         
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         let className = "Item"
         var error: NSError?
         let fetchRequest = NSFetchRequest(entityName:className)
+        var sorter: NSSortDescriptor = NSSortDescriptor(key: "date" , ascending: false)
+        fetchRequest.sortDescriptors = [sorter]
         let results = delegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
         for resultItem in results! {
             self.items.append(resultItem as Item)
@@ -50,7 +52,12 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
-        cell.textLabel.text = self.items[indexPath.row].text
+        let item = self.items[indexPath.row]
+        if item.text != nil {
+            cell.textLabel.text = item.text
+        } else {
+            cell.textLabel.text = ""
+        }
         
         return cell
     }
