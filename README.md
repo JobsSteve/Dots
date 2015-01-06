@@ -1,6 +1,6 @@
 [![Language: Swift](https://img.shields.io/badge/lang-Swift-yellow.svg?style=flat)](https://developer.apple.com/swift/)
 
-# <center>![xcres](https://raw.githubusercontent.com/knmsyk/Dots/master/Dots/Images.xcassets/AppIcon.appiconset/152.png)</center>
+![icon](https://raw.githubusercontent.com/knmsyk/Dots/master/Dots/Images.xcassets/AppIcon.appiconset/152.png)
 
 Dots
 ====

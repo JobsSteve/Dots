@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		A31B6EFB1A597A6900ECA212 /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31B6EFA1A597A6900ECA212 /* Timepiece.framework */; };
 		A31B6EFC1A597A6900ECA212 /* Timepiece.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A31B6EFA1A597A6900ECA212 /* Timepiece.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A33939071A5A26D30085C275 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33939061A5A26D30085C275 /* Item.swift */; };
-		A3603F061A584B0200ACE0DE /* BloggerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3603F051A584B0200ACE0DE /* BloggerFetcher.swift */; };
 		A3603F081A58D3A000ACE0DE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */; };
 		A3603F091A58D3A000ACE0DE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A385C9D11A5BE2A2008ADE98 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D01A5BE2A2008ADE98 /* PrivateConstants.swift */; };
+		A385C9D61A5BEFBA008ADE98 /* BloggerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D21A5BEFBA008ADE98 /* BloggerFetcher.swift */; };
+		A385C9D71A5BEFBA008ADE98 /* DotsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D31A5BEFBA008ADE98 /* DotsFetcher.swift */; };
+		A385C9D81A5BEFBA008ADE98 /* HatebuFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D41A5BEFBA008ADE98 /* HatebuFetcher.swift */; };
+		A385C9D91A5BEFBA008ADE98 /* TweetsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D51A5BEFBA008ADE98 /* TweetsFetcher.swift */; };
+		A385C9DB1A5BEFC7008ADE98 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9DA1A5BEFC7008ADE98 /* Item.swift */; };
 		A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */; };
 		A3C7CB601A539A1F00CA6696 /* Dots.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5E1A539A1F00CA6696 /* Dots.xcdatamodeld */; };
 		A3C7CB621A539A1F00CA6696 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB611A539A1F00CA6696 /* ItemViewController.swift */; };
@@ -25,11 +28,8 @@
 		A3C7CB991A539A5300CA6696 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C7CB981A539A5300CA6696 /* Twitter.framework */; };
 		A3C7CB9B1A539A6D00CA6696 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C7CB9A1A539A6D00CA6696 /* CoreData.framework */; };
 		A3C7CB9D1A539A7C00CA6696 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C7CB9C1A539A7C00CA6696 /* Social.framework */; };
-		A3C7CBA01A56651400CA6696 /* DotsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB9F1A56651400CA6696 /* DotsFetcher.swift */; };
 		A3C7CBAF1A57007F00CA6696 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C7CBAE1A57007F00CA6696 /* SwifteriOS.framework */; };
 		A3C7CBB01A57007F00CA6696 /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3C7CBAE1A57007F00CA6696 /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A3E746D41A58165E00E85D84 /* TweetsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E746D31A58165E00E85D84 /* TweetsFetcher.swift */; };
-		A3E746D61A5819C900E85D84 /* HatebuFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E746D51A5819C900E85D84 /* HatebuFetcher.swift */; };
 		A3E746D81A5819F300E85D84 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E746D71A5819F300E85D84 /* Utility.swift */; };
 		A3E746E01A582DE800E85D84 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E746DF1A582DE800E85D84 /* Alamofire.framework */; };
 		A3E746E11A582DE800E85D84 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3E746DF1A582DE800E85D84 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -65,10 +65,13 @@
 
 /* Begin PBXFileReference section */
 		A31B6EFA1A597A6900ECA212 /* Timepiece.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timepiece.framework; path = Carthage/Build/iOS/Timepiece.framework; sourceTree = "<group>"; };
-		A33939061A5A26D30085C275 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		A3603F051A584B0200ACE0DE /* BloggerFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloggerFetcher.swift; sourceTree = "<group>"; };
 		A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		A385C9D01A5BE2A2008ADE98 /* PrivateConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
+		A385C9D21A5BEFBA008ADE98 /* BloggerFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerFetcher.swift; path = Fetcher/BloggerFetcher.swift; sourceTree = "<group>"; };
+		A385C9D31A5BEFBA008ADE98 /* DotsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotsFetcher.swift; path = Fetcher/DotsFetcher.swift; sourceTree = "<group>"; };
+		A385C9D41A5BEFBA008ADE98 /* HatebuFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HatebuFetcher.swift; path = Fetcher/HatebuFetcher.swift; sourceTree = "<group>"; };
+		A385C9D51A5BEFBA008ADE98 /* TweetsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetsFetcher.swift; path = Fetcher/TweetsFetcher.swift; sourceTree = "<group>"; };
+		A385C9DA1A5BEFC7008ADE98 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
 		A3C7CB571A539A1F00CA6696 /* Dots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C7CB5B1A539A1F00CA6696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,10 +87,7 @@
 		A3C7CB981A539A5300CA6696 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		A3C7CB9A1A539A6D00CA6696 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A3C7CB9C1A539A7C00CA6696 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		A3C7CB9F1A56651400CA6696 /* DotsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotsFetcher.swift; sourceTree = "<group>"; };
 		A3C7CBAE1A57007F00CA6696 /* SwifteriOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifteriOS.framework; path = Carthage/Build/iOS/SwifteriOS.framework; sourceTree = "<group>"; };
-		A3E746D31A58165E00E85D84 /* TweetsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsFetcher.swift; sourceTree = "<group>"; };
-		A3E746D51A5819C900E85D84 /* HatebuFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HatebuFetcher.swift; sourceTree = "<group>"; };
 		A3E746D71A5819F300E85D84 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A3E746DF1A582DE800E85D84 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		A3E746E31A5835D500E85D84 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWXMLHash.swift; path = SWXMLHash/SWXMLHash/SWXMLHash.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 		A3C7CBB11A57895C00CA6696 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A33939061A5A26D30085C275 /* Item.swift */,
+				A385C9DA1A5BEFC7008ADE98 /* Item.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -208,10 +208,10 @@
 		A3E746D21A58162800E85D84 /* Fetcher */ = {
 			isa = PBXGroup;
 			children = (
-				A3E746D51A5819C900E85D84 /* HatebuFetcher.swift */,
-				A3E746D31A58165E00E85D84 /* TweetsFetcher.swift */,
-				A3C7CB9F1A56651400CA6696 /* DotsFetcher.swift */,
-				A3603F051A584B0200ACE0DE /* BloggerFetcher.swift */,
+				A385C9D21A5BEFBA008ADE98 /* BloggerFetcher.swift */,
+				A385C9D31A5BEFBA008ADE98 /* DotsFetcher.swift */,
+				A385C9D41A5BEFBA008ADE98 /* HatebuFetcher.swift */,
+				A385C9D51A5BEFBA008ADE98 /* TweetsFetcher.swift */,
 			);
 			name = Fetcher;
 			sourceTree = "<group>";
@@ -323,17 +323,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A33939071A5A26D30085C275 /* Item.swift in Sources */,
-				A3E746D61A5819C900E85D84 /* HatebuFetcher.swift in Sources */,
-				A3E746D41A58165E00E85D84 /* TweetsFetcher.swift in Sources */,
 				A3C7CB621A539A1F00CA6696 /* ItemViewController.swift in Sources */,
+				A385C9D81A5BEFBA008ADE98 /* HatebuFetcher.swift in Sources */,
+				A385C9D61A5BEFBA008ADE98 /* BloggerFetcher.swift in Sources */,
 				A3E746D81A5819F300E85D84 /* Utility.swift in Sources */,
 				A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */,
-				A3603F061A584B0200ACE0DE /* BloggerFetcher.swift in Sources */,
 				A385C9D11A5BE2A2008ADE98 /* PrivateConstants.swift in Sources */,
+				A385C9DB1A5BEFC7008ADE98 /* Item.swift in Sources */,
+				A385C9D71A5BEFBA008ADE98 /* DotsFetcher.swift in Sources */,
 				A3C7CB601A539A1F00CA6696 /* Dots.xcdatamodeld in Sources */,
+				A385C9D91A5BEFBA008ADE98 /* TweetsFetcher.swift in Sources */,
 				A3E746E41A5835D500E85D84 /* SWXMLHash.swift in Sources */,
-				A3C7CBA01A56651400CA6696 /* DotsFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
