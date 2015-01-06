@@ -10,3 +10,8 @@ Dots
 > [Steve Jobs' 2005 Stanford Commencement Address ](http://news.stanford.edu/news/2005/june15/jobs-061505.html)
 
 iOS app to remind and memorise activities of your SNS or Blog.
+
+## TODO
+- [ ] a feature to add any acounts for each service
+- [ ] add Qiita fetcher
+- [ ] add Evernote fetcher
