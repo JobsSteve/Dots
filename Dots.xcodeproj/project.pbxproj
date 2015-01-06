@@ -17,6 +17,7 @@
 		A385C9D81A5BEFBA008ADE98 /* HatebuFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D41A5BEFBA008ADE98 /* HatebuFetcher.swift */; };
 		A385C9D91A5BEFBA008ADE98 /* TweetsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D51A5BEFBA008ADE98 /* TweetsFetcher.swift */; };
 		A385C9DB1A5BEFC7008ADE98 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9DA1A5BEFC7008ADE98 /* Item.swift */; };
+		A385C9E21A5C07FD008ADE98 /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9E01A5C07FD008ADE98 /* ItemViewCell.swift */; };
 		A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */; };
 		A3C7CB601A539A1F00CA6696 /* Dots.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5E1A539A1F00CA6696 /* Dots.xcdatamodeld */; };
 		A3C7CB621A539A1F00CA6696 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB611A539A1F00CA6696 /* ItemViewController.swift */; };
@@ -72,6 +73,7 @@
 		A385C9D41A5BEFBA008ADE98 /* HatebuFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HatebuFetcher.swift; path = Fetcher/HatebuFetcher.swift; sourceTree = "<group>"; };
 		A385C9D51A5BEFBA008ADE98 /* TweetsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetsFetcher.swift; path = Fetcher/TweetsFetcher.swift; sourceTree = "<group>"; };
 		A385C9DA1A5BEFC7008ADE98 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
+		A385C9E01A5C07FD008ADE98 /* ItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemViewCell.swift; path = ../ItemViewCell.swift; sourceTree = "<group>"; };
 		A3C7CB571A539A1F00CA6696 /* Dots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C7CB5B1A539A1F00CA6696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */,
 				A385C9D01A5BE2A2008ADE98 /* PrivateConstants.swift */,
 				A3C7CB611A539A1F00CA6696 /* ItemViewController.swift */,
+				A385C9E01A5C07FD008ADE98 /* ItemViewCell.swift */,
 				A3E746D71A5819F300E85D84 /* Utility.swift */,
 				A3C7CB631A539A1F00CA6696 /* Main.storyboard */,
 				A3C7CB661A539A1F00CA6696 /* Images.xcassets */,
@@ -326,6 +329,7 @@
 				A3C7CB621A539A1F00CA6696 /* ItemViewController.swift in Sources */,
 				A385C9D81A5BEFBA008ADE98 /* HatebuFetcher.swift in Sources */,
 				A385C9D61A5BEFBA008ADE98 /* BloggerFetcher.swift in Sources */,
+				A385C9E21A5C07FD008ADE98 /* ItemViewCell.swift in Sources */,
 				A3E746D81A5819F300E85D84 /* Utility.swift in Sources */,
 				A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */,
 				A385C9D11A5BE2A2008ADE98 /* PrivateConstants.swift in Sources */,

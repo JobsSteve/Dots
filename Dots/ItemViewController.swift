@@ -23,8 +23,6 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
         DotsFetcher.fetch()
         
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -48,17 +46,11 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
-    
+ 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        
+        var cell: ItemViewCell = tableView.dequeueReusableCellWithIdentifier("ItemViewCell") as ItemViewCell
         let item = self.items[indexPath.row]
-        if item.text != nil {
-            cell.textLabel.text = item.text
-        } else {
-            cell.textLabel.text = ""
-        }
-        
+        cell.configureCell(item)
         return cell
     }
     

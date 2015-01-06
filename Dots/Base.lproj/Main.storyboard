@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Item View Controller-->
@@ -16,9 +17,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Rl0-0q-LxY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Rl0-0q-LxY">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemViewCell" rowHeight="135" id="qro-CY-BY5" customClass="ItemViewCell" customModule="Dots" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qro-CY-BY5" id="qXd-QS-TmA">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idx-XL-s0d">
+                                                    <rect key="frame" x="28" y="8" width="564" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Gfw-e7-gGm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfv-BG-Fz5">
+                                                    <rect key="frame" x="28" y="37" width="564" height="65"/>
+                                                    <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-Ku-u6R">
+                                                    <rect key="frame" x="452" y="106" width="120" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="4Bh-AB-t9L"/>
+                                                        <constraint firstAttribute="height" constant="20" id="hAl-G4-cJA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06X-GS-Sh9">
+                                                    <rect key="frame" x="28" y="106" width="200" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Fzx-mf-4EW"/>
+                                                        <constraint firstAttribute="width" constant="200" id="RVq-co-xpZ"/>
+                                                        <constraint firstAttribute="height" constant="20" id="aqb-XO-Jdb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Wfv-BG-Fz5" firstAttribute="top" secondItem="Idx-XL-s0d" secondAttribute="bottom" constant="8" id="5tW-Pg-ysT"/>
+                                                <constraint firstItem="Idx-XL-s0d" firstAttribute="leading" secondItem="qXd-QS-TmA" secondAttribute="leadingMargin" constant="20" id="Cfn-68-j7A"/>
+                                                <constraint firstItem="kbi-Ku-u6R" firstAttribute="bottom" secondItem="qXd-QS-TmA" secondAttribute="bottomMargin" id="G5q-qA-huw"/>
+                                                <constraint firstItem="06X-GS-Sh9" firstAttribute="top" secondItem="Wfv-BG-Fz5" secondAttribute="bottom" constant="4" id="LHW-Ep-p9j"/>
+                                                <constraint firstItem="Wfv-BG-Fz5" firstAttribute="leading" secondItem="qXd-QS-TmA" secondAttribute="leading" constant="28" id="LgG-Qw-VOy"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wfv-BG-Fz5" secondAttribute="trailing" constant="8" id="RCP-Nd-ESX"/>
+                                                <constraint firstItem="Idx-XL-s0d" firstAttribute="top" secondItem="qXd-QS-TmA" secondAttribute="topMargin" id="YHa-S9-xaf"/>
+                                                <constraint firstItem="kbi-Ku-u6R" firstAttribute="top" secondItem="Wfv-BG-Fz5" secondAttribute="bottom" constant="4" id="dTw-6O-Tks"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kbi-Ku-u6R" secondAttribute="trailing" constant="20" id="htg-i2-Eg3"/>
+                                                <constraint firstItem="06X-GS-Sh9" firstAttribute="bottom" secondItem="qXd-QS-TmA" secondAttribute="bottomMargin" id="j7R-Et-Ucx"/>
+                                                <constraint firstItem="06X-GS-Sh9" firstAttribute="leading" secondItem="qXd-QS-TmA" secondAttribute="leadingMargin" constant="20" id="qHP-MD-e9x"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Idx-XL-s0d" secondAttribute="trailing" id="qWR-gp-NqI"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="dTw-6O-Tks"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="abstract" destination="Wfv-BG-Fz5" id="8fg-qG-EZe"/>
+                                            <outlet property="time" destination="kbi-Ku-u6R" id="3ah-ir-Egl"/>
+                                            <outlet property="title" destination="Idx-XL-s0d" id="x9k-2u-Ejb"/>
+                                            <outlet property="titleHeight" destination="Gfw-e7-gGm" id="62L-TQ-zaZ"/>
+                                            <outlet property="userName" destination="06X-GS-Sh9" id="1aa-Rf-ZcD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="h0d-0i-d9P"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="JyZ-we-jqv"/>
@@ -39,6 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="326" y="230"/>
         </scene>
     </scenes>
 </document>
