@@ -26,7 +26,7 @@ class ItemViewCell: UITableViewCell {
         serviceIcon.clipToCircle()
         userIcon.clipToCircle()
         let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor(red: 238.0/255.0, green: 232.0/255.0, blue: 213.0/255.0, alpha: 1.0)
+        backgroundView.backgroundColor = SorarizedColors.Alpha.Green01
         self.selectedBackgroundView = backgroundView
     }
 
@@ -38,24 +38,32 @@ class ItemViewCell: UITableViewCell {
     
     func configureCell(item: Item) {
         if item.title? == nil {
+            self.title?.text = ""
             titleHeight.constant = 0
         } else {
             self.title?.text = item.title            
+            titleHeight.constant = 40
         }
-        self.setAbstract(item.text!)
-        self.time?.text = Utility.stringFromDate("HH:mm:dd", date: item.date)
+        self.setAbstract(item.text)
+        self.time?.text = Utility.stringFromDate("HH:mm", date: item.created_at)
         self.userName?.text = item.user?.name
         if let url = item.user?.picture {
             userIcon.loadImageAsync(url)
+        } else {
+            userIcon.image = nil
         }
         serviceIcon.image = UIImage(named: "twitter")
     }
     
-    func setAbstract(string: String) {
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 4
-        var attrString = NSMutableAttributedString(string: string)
-        attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
-        abstract.attributedText = attrString
+    func setAbstract(string: String?) {
+        if let string = string {
+            var paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 4
+            var attrString = NSMutableAttributedString(string: string)
+            attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+            abstract.attributedText = attrString
+        } else {
+            abstract.text = ""
+        }
     }
 }

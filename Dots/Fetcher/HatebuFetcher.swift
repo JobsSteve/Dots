@@ -55,7 +55,7 @@ class HatebuFetcher: NSObject {
                 item.url = url
             }
             if let date = entry["issued"].element?.text {
-                item.date = Utility.dateFromStringFormat("yyyy-MM-dd'T'HH:mm:ssZ", datetime: date)
+                item.created_at = Utility.dateFromStringFormat("yyyy-MM-dd'T'HH:mm:ssZ", datetime: date)
             }
         }
         app.saveContext()

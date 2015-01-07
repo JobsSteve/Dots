@@ -10,7 +10,8 @@
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="entry" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="is_active" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
@@ -42,7 +43,7 @@
     <elements>
         <element name="Cycle" positionX="-126" positionY="243" width="128" height="73"/>
         <element name="Entry" positionX="-110" positionY="117" width="128" height="88"/>
-        <element name="Item" positionX="16" positionY="221" width="128" height="208"/>
+        <element name="Item" positionX="16" positionY="221" width="128" height="225"/>
         <element name="Service" positionX="-261" positionY="117" width="128" height="118"/>
         <element name="User" positionX="-90" positionY="261" width="128" height="163"/>
     </elements>

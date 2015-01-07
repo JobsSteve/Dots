@@ -13,8 +13,10 @@
 		A32A20031A5D74DA00090CAA /* evernote.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A1FFF1A5D74DA00090CAA /* evernote.png */; };
 		A32A20041A5D74DA00090CAA /* hatena_bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A20001A5D74DA00090CAA /* hatena_bookmark.png */; };
 		A32A20051A5D74DA00090CAA /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A20011A5D74DA00090CAA /* twitter.png */; };
+		A32A20071A5D7BC600090CAA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32A20061A5D7BC600090CAA /* Item.swift */; };
 		A3603F081A58D3A000ACE0DE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */; };
 		A3603F091A58D3A000ACE0DE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A36F75DE1A5D988800432738 /* SorarizedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F75DD1A5D988800432738 /* SorarizedColors.swift */; };
 		A385C9D11A5BE2A2008ADE98 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D01A5BE2A2008ADE98 /* PrivateConstants.swift */; };
 		A385C9D61A5BEFBA008ADE98 /* BloggerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D21A5BEFBA008ADE98 /* BloggerFetcher.swift */; };
 		A385C9D71A5BEFBA008ADE98 /* DotsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D31A5BEFBA008ADE98 /* DotsFetcher.swift */; };
@@ -24,7 +26,6 @@
 		A385C9F91A5CAD58008ADE98 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9F81A5CAD58008ADE98 /* Service.swift */; };
 		A385C9FB1A5CAD59008ADE98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FA1A5CAD59008ADE98 /* User.swift */; };
 		A385C9FD1A5CAD59008ADE98 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FC1A5CAD59008ADE98 /* Cycle.swift */; };
-		A385C9FF1A5CAD59008ADE98 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FE1A5CAD59008ADE98 /* Item.swift */; };
 		A385CA051A5CBF24008ADE98 /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385CA041A5CBF24008ADE98 /* ItemViewCell.swift */; };
 		A385CA071A5D3DDA008ADE98 /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385CA061A5D3DDA008ADE98 /* UIImageView+Util.swift */; };
 		A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */; };
@@ -79,7 +80,9 @@
 		A32A1FFF1A5D74DA00090CAA /* evernote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = evernote.png; sourceTree = "<group>"; };
 		A32A20001A5D74DA00090CAA /* hatena_bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hatena_bookmark.png; sourceTree = "<group>"; };
 		A32A20011A5D74DA00090CAA /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		A32A20061A5D7BC600090CAA /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
 		A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		A36F75DD1A5D988800432738 /* SorarizedColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SorarizedColors.swift; sourceTree = "<group>"; };
 		A385C9D01A5BE2A2008ADE98 /* PrivateConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		A385C9D21A5BEFBA008ADE98 /* BloggerFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerFetcher.swift; path = Fetcher/BloggerFetcher.swift; sourceTree = "<group>"; };
 		A385C9D31A5BEFBA008ADE98 /* DotsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotsFetcher.swift; path = Fetcher/DotsFetcher.swift; sourceTree = "<group>"; };
@@ -89,7 +92,6 @@
 		A385C9F81A5CAD58008ADE98 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Model/Service.swift; sourceTree = "<group>"; };
 		A385C9FA1A5CAD59008ADE98 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		A385C9FC1A5CAD59008ADE98 /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cycle.swift; path = Model/Cycle.swift; sourceTree = "<group>"; };
-		A385C9FE1A5CAD59008ADE98 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
 		A385CA041A5CBF24008ADE98 /* ItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCell.swift; sourceTree = "<group>"; };
 		A385CA061A5D3DDA008ADE98 /* UIImageView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
 		A3C7CB571A539A1F00CA6696 /* Dots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dots.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 				A3C7CBB11A57895C00CA6696 /* Model */,
 				A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */,
 				A385C9D01A5BE2A2008ADE98 /* PrivateConstants.swift */,
+				A36F75DD1A5D988800432738 /* SorarizedColors.swift */,
 				A3C7CB611A539A1F00CA6696 /* ItemViewController.swift */,
 				A385CA041A5CBF24008ADE98 /* ItemViewCell.swift */,
 				A3E746D71A5819F300E85D84 /* Utility.swift */,
@@ -242,11 +245,11 @@
 		A3C7CBB11A57895C00CA6696 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A385C9FE1A5CAD59008ADE98 /* Item.swift */,
 				A385C9FC1A5CAD59008ADE98 /* Cycle.swift */,
 				A385C9FA1A5CAD59008ADE98 /* User.swift */,
 				A385C9F81A5CAD58008ADE98 /* Service.swift */,
 				A385C9F61A5CAD58008ADE98 /* Entry.swift */,
+				A32A20061A5D7BC600090CAA /* Item.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -375,15 +378,16 @@
 			files = (
 				A385C9F71A5CAD58008ADE98 /* Entry.swift in Sources */,
 				A385C9F91A5CAD58008ADE98 /* Service.swift in Sources */,
+				A32A20071A5D7BC600090CAA /* Item.swift in Sources */,
 				A3C7CB621A539A1F00CA6696 /* ItemViewController.swift in Sources */,
 				A385CA071A5D3DDA008ADE98 /* UIImageView+Util.swift in Sources */,
 				A385C9D81A5BEFBA008ADE98 /* HatebuFetcher.swift in Sources */,
-				A385C9FF1A5CAD59008ADE98 /* Item.swift in Sources */,
 				A385C9D61A5BEFBA008ADE98 /* BloggerFetcher.swift in Sources */,
 				A385C9FB1A5CAD59008ADE98 /* User.swift in Sources */,
 				A385CA051A5CBF24008ADE98 /* ItemViewCell.swift in Sources */,
 				A3E746D81A5819F300E85D84 /* Utility.swift in Sources */,
 				A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */,
+				A36F75DE1A5D988800432738 /* SorarizedColors.swift in Sources */,
 				A385C9D11A5BE2A2008ADE98 /* PrivateConstants.swift in Sources */,
 				A385C9D71A5BEFBA008ADE98 /* DotsFetcher.swift in Sources */,
 				A385C9FD1A5CAD59008ADE98 /* Cycle.swift in Sources */,

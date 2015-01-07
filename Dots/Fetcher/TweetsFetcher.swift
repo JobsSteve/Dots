@@ -105,7 +105,7 @@ class TweetsFetcher: NSObject {
             if status["entities"]["media"][0] {
                 item.picture = status["entities"]["media"][0]["media_url"].string!
             }
-            item.date = Utility.dateFromStringFormat("eee MMM dd HH:mm:ss ZZZZ yyyy", datetime: status["created_at"].string!)
+            item.created_at = Utility.dateFromStringFormat("eee MMM dd HH:mm:ss ZZZZ yyyy", datetime: status["created_at"].string!)
             
             // User
             let userId = status["user"]["id_str"].string!
