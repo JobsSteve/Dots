@@ -16,8 +16,12 @@
 		A385C9D71A5BEFBA008ADE98 /* DotsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D31A5BEFBA008ADE98 /* DotsFetcher.swift */; };
 		A385C9D81A5BEFBA008ADE98 /* HatebuFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D41A5BEFBA008ADE98 /* HatebuFetcher.swift */; };
 		A385C9D91A5BEFBA008ADE98 /* TweetsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D51A5BEFBA008ADE98 /* TweetsFetcher.swift */; };
-		A385C9DB1A5BEFC7008ADE98 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9DA1A5BEFC7008ADE98 /* Item.swift */; };
 		A385C9E21A5C07FD008ADE98 /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9E01A5C07FD008ADE98 /* ItemViewCell.swift */; };
+		A385C9F71A5CAD58008ADE98 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9F61A5CAD58008ADE98 /* Entry.swift */; };
+		A385C9F91A5CAD58008ADE98 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9F81A5CAD58008ADE98 /* Service.swift */; };
+		A385C9FB1A5CAD59008ADE98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FA1A5CAD59008ADE98 /* User.swift */; };
+		A385C9FD1A5CAD59008ADE98 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FC1A5CAD59008ADE98 /* Cycle.swift */; };
+		A385C9FF1A5CAD59008ADE98 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FE1A5CAD59008ADE98 /* Item.swift */; };
 		A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */; };
 		A3C7CB601A539A1F00CA6696 /* Dots.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5E1A539A1F00CA6696 /* Dots.xcdatamodeld */; };
 		A3C7CB621A539A1F00CA6696 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB611A539A1F00CA6696 /* ItemViewController.swift */; };
@@ -72,8 +76,12 @@
 		A385C9D31A5BEFBA008ADE98 /* DotsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotsFetcher.swift; path = Fetcher/DotsFetcher.swift; sourceTree = "<group>"; };
 		A385C9D41A5BEFBA008ADE98 /* HatebuFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HatebuFetcher.swift; path = Fetcher/HatebuFetcher.swift; sourceTree = "<group>"; };
 		A385C9D51A5BEFBA008ADE98 /* TweetsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetsFetcher.swift; path = Fetcher/TweetsFetcher.swift; sourceTree = "<group>"; };
-		A385C9DA1A5BEFC7008ADE98 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
 		A385C9E01A5C07FD008ADE98 /* ItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemViewCell.swift; path = ../ItemViewCell.swift; sourceTree = "<group>"; };
+		A385C9F61A5CAD58008ADE98 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Model/Entry.swift; sourceTree = "<group>"; };
+		A385C9F81A5CAD58008ADE98 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Model/Service.swift; sourceTree = "<group>"; };
+		A385C9FA1A5CAD59008ADE98 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
+		A385C9FC1A5CAD59008ADE98 /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cycle.swift; path = Model/Cycle.swift; sourceTree = "<group>"; };
+		A385C9FE1A5CAD59008ADE98 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
 		A3C7CB571A539A1F00CA6696 /* Dots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C7CB5B1A539A1F00CA6696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,7 +211,11 @@
 		A3C7CBB11A57895C00CA6696 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A385C9DA1A5BEFC7008ADE98 /* Item.swift */,
+				A385C9FE1A5CAD59008ADE98 /* Item.swift */,
+				A385C9FC1A5CAD59008ADE98 /* Cycle.swift */,
+				A385C9FA1A5CAD59008ADE98 /* User.swift */,
+				A385C9F81A5CAD58008ADE98 /* Service.swift */,
+				A385C9F61A5CAD58008ADE98 /* Entry.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -326,15 +338,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A385C9F71A5CAD58008ADE98 /* Entry.swift in Sources */,
+				A385C9F91A5CAD58008ADE98 /* Service.swift in Sources */,
 				A3C7CB621A539A1F00CA6696 /* ItemViewController.swift in Sources */,
 				A385C9D81A5BEFBA008ADE98 /* HatebuFetcher.swift in Sources */,
+				A385C9FF1A5CAD59008ADE98 /* Item.swift in Sources */,
 				A385C9D61A5BEFBA008ADE98 /* BloggerFetcher.swift in Sources */,
 				A385C9E21A5C07FD008ADE98 /* ItemViewCell.swift in Sources */,
+				A385C9FB1A5CAD59008ADE98 /* User.swift in Sources */,
 				A3E746D81A5819F300E85D84 /* Utility.swift in Sources */,
 				A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */,
 				A385C9D11A5BE2A2008ADE98 /* PrivateConstants.swift in Sources */,
-				A385C9DB1A5BEFC7008ADE98 /* Item.swift in Sources */,
 				A385C9D71A5BEFBA008ADE98 /* DotsFetcher.swift in Sources */,
+				A385C9FD1A5CAD59008ADE98 /* Cycle.swift in Sources */,
 				A3C7CB601A539A1F00CA6696 /* Dots.xcdatamodeld in Sources */,
 				A385C9D91A5BEFBA008ADE98 /* TweetsFetcher.swift in Sources */,
 				A3E746E41A5835D500E85D84 /* SWXMLHash.swift in Sources */,

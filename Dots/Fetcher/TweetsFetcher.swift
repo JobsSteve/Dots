@@ -49,13 +49,13 @@ class TweetsFetcher: NSObject {
         fetchFavorites()
         fetchOwnTweets()
     }
+
+    let failureHandler: ((NSError) -> Void) = {
+        error in
+        println("Error:" + error.localizedDescription)
+    }
     
     func fetchOwnTweets() {
-        let failureHandler: ((NSError) -> Void) = {
-            error in
-            println("Error:" + error.localizedDescription)
-        }
-        
         if let t = self.swifter.client.credential?.account {
             let properties = t.valueForKey("properties") as NSDictionary
             let userId = properties["user_id"] as String
@@ -63,6 +63,7 @@ class TweetsFetcher: NSObject {
                 (statuses: [JSONValue]?) in
                 
                 if let statuses = statuses {
+                    println(statuses)
                     self.parseTweets(statuses)
                 };
                 
@@ -71,11 +72,6 @@ class TweetsFetcher: NSObject {
     }
     
     func fetchFavorites() {
-        let failureHandler: ((NSError) -> Void) = {
-            error in
-            println("Error:" + error.localizedDescription)
-        }
-        
         self.swifter.getFavoritesListWithCount(fetchCounts, sinceID: nil, maxID: nil, success: {
             (statuses: [JSONValue]?) in
             
@@ -88,20 +84,18 @@ class TweetsFetcher: NSObject {
     
     func parseTweets(statuses: [JSONValue]) {
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let className = "Item"
         var error: NSError?
-        let fetchRequest = NSFetchRequest(entityName:className)
+        let fetchItemRequest = NSFetchRequest(entityName:"Item")
+        let fetchUserRequest = NSFetchRequest(entityName:"User")
         
         outerLoop: for status: JSONValue in statuses {
             let id = status["id_str"].string!
-            fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-            let results = delegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
+            fetchItemRequest.predicate = NSPredicate(format: "id == %@", id)
+            let results = delegate.managedObjectContext!.executeFetchRequest(fetchItemRequest, error: &error)
             for resultItem in results! {
-                let item = resultItem as Item
                 continue outerLoop
             }
-            
-            var item: Item = NSEntityDescription.insertNewObjectForEntityForName(className, inManagedObjectContext: delegate.managedObjectContext!) as Item
+            var item: Item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: delegate.managedObjectContext!) as Item
             item.id = id
             item.text = status["text"].string!
             if status["entities"]["urls"][0] {
@@ -111,6 +105,29 @@ class TweetsFetcher: NSObject {
                 item.picture = status["entities"]["media"][0]["media_url"].string!
             }
             item.date = NSDate()
+            
+            let userId = status["user"]["id_str"].string!
+            fetchUserRequest.predicate = NSPredicate(format: "id == %@", userId)
+            let users = delegate.managedObjectContext!.executeFetchRequest(fetchUserRequest, error: &error)
+            for user in users! {
+                item.user = user as? User
+                continue outerLoop
+            }
+            var user: User = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: delegate.managedObjectContext!) as User
+            user.id = userId
+            if let screen = status["user"]["screen_name"].string {
+                user.screen_name = screen
+            }
+            if let name = status["user"]["name"].string {
+                user.name = name
+            }
+            if let image = status["user"]["profile_image_url"].string {
+                user.picture = image
+            }
+            if let url = status["user"]["url"].string {
+                user.url = url
+            }
+            item.user = user
         }
         delegate.saveContext()
     }

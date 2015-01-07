@@ -12,6 +12,12 @@ import Timepiece
 class DotsFetcher {
     
     class func fetch() {
+        let lastFetchKey = "last_fetch_date"
+        let date = NSUserDefaults.standardUserDefaults().objectForKey(lastFetchKey) as NSDate?
+        if date?.compare(3.hours.ago) == NSComparisonResult.OrderedDescending {
+            return
+        }
+        
         let tweetsFetcher = TweetsFetcher()
         tweetsFetcher.setUpTwitterAccount()
         
@@ -21,6 +27,8 @@ class DotsFetcher {
             HatebuFetcher.fetchData(ago)
             BloggerFetcher.fetchData(ago)
         }
+        
+        NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey:lastFetchKey)
     }
     
     //    class func fetchGoogleHistory() {
