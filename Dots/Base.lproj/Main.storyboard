@@ -71,10 +71,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G5h-Tb-V3c">
-                                                    <rect key="frame" x="6" y="106" width="20" height="20"/>
+                                                    <rect key="frame" x="586" y="120" width="10" height="10"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="5iA-rU-dYe"/>
-                                                        <constraint firstAttribute="height" constant="20" id="qHg-P0-0Gy"/>
+                                                        <constraint firstAttribute="width" constant="10" id="5iA-rU-dYe"/>
+                                                        <constraint firstAttribute="height" constant="10" id="qHg-P0-0Gy"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PPH-MM-IWK">
@@ -89,7 +89,7 @@
                                                 <constraint firstItem="kbi-Ku-u6R" firstAttribute="leading" secondItem="qXd-QS-TmA" secondAttribute="leadingMargin" constant="20" id="571-68-AUQ"/>
                                                 <constraint firstItem="Wfv-BG-Fz5" firstAttribute="top" secondItem="Idx-XL-s0d" secondAttribute="bottom" constant="8" id="5tW-Pg-ysT"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="06X-GS-Sh9" secondAttribute="trailing" constant="30" id="Ars-MN-J6A"/>
-                                                <constraint firstAttribute="bottom" secondItem="G5h-Tb-V3c" secondAttribute="bottom" constant="8" id="Blz-cm-Sm2"/>
+                                                <constraint firstAttribute="bottom" secondItem="G5h-Tb-V3c" secondAttribute="bottom" constant="4" id="Blz-cm-Sm2"/>
                                                 <constraint firstItem="Idx-XL-s0d" firstAttribute="leading" secondItem="qXd-QS-TmA" secondAttribute="leadingMargin" constant="20" id="Cfn-68-j7A"/>
                                                 <constraint firstItem="kbi-Ku-u6R" firstAttribute="bottom" secondItem="qXd-QS-TmA" secondAttribute="bottomMargin" id="G5q-qA-huw"/>
                                                 <constraint firstItem="G5h-Tb-V3c" firstAttribute="leading" secondItem="qXd-QS-TmA" secondAttribute="leading" constant="6" id="Izr-0y-G7e"/>
@@ -100,6 +100,7 @@
                                                 <constraint firstItem="kbi-Ku-u6R" firstAttribute="leading" secondItem="06X-GS-Sh9" secondAttribute="trailing" constant="8" id="PeF-2i-5Rf"/>
                                                 <constraint firstAttribute="trailing" secondItem="Wfv-BG-Fz5" secondAttribute="trailing" constant="8" id="RCP-Nd-ESX"/>
                                                 <constraint firstItem="Idx-XL-s0d" firstAttribute="top" secondItem="qXd-QS-TmA" secondAttribute="topMargin" id="YHa-S9-xaf"/>
+                                                <constraint firstAttribute="trailing" secondItem="G5h-Tb-V3c" secondAttribute="trailing" constant="4" id="ah6-6s-h30"/>
                                                 <constraint firstItem="kbi-Ku-u6R" firstAttribute="top" secondItem="Wfv-BG-Fz5" secondAttribute="bottom" constant="4" id="dTw-6O-Tks"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="kbi-Ku-u6R" secondAttribute="trailing" constant="20" id="htg-i2-Eg3"/>
                                                 <constraint firstItem="06X-GS-Sh9" firstAttribute="bottom" secondItem="qXd-QS-TmA" secondAttribute="bottomMargin" id="j7R-Et-Ucx"/>
@@ -112,6 +113,7 @@
                                                     <exclude reference="dTw-6O-Tks"/>
                                                     <exclude reference="htg-i2-Eg3"/>
                                                     <exclude reference="qHP-MD-e9x"/>
+                                                    <exclude reference="Izr-0y-G7e"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

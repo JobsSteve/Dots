@@ -48,6 +48,7 @@ class ItemViewCell: UITableViewCell {
         if let url = item.user?.picture {
             userIcon.loadImageAsync(url)
         }
+        serviceIcon.image = UIImage(named: "twitter")
     }
     
     func setAbstract(string: String) {

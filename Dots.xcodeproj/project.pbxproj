@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		A31B6EFB1A597A6900ECA212 /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31B6EFA1A597A6900ECA212 /* Timepiece.framework */; };
 		A31B6EFC1A597A6900ECA212 /* Timepiece.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A31B6EFA1A597A6900ECA212 /* Timepiece.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A32A20021A5D74DA00090CAA /* blogger.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A1FFE1A5D74DA00090CAA /* blogger.png */; };
+		A32A20031A5D74DA00090CAA /* evernote.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A1FFF1A5D74DA00090CAA /* evernote.png */; };
+		A32A20041A5D74DA00090CAA /* hatena_bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A20001A5D74DA00090CAA /* hatena_bookmark.png */; };
+		A32A20051A5D74DA00090CAA /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A20011A5D74DA00090CAA /* twitter.png */; };
 		A3603F081A58D3A000ACE0DE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */; };
 		A3603F091A58D3A000ACE0DE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A385C9D11A5BE2A2008ADE98 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9D01A5BE2A2008ADE98 /* PrivateConstants.swift */; };
@@ -71,6 +75,10 @@
 
 /* Begin PBXFileReference section */
 		A31B6EFA1A597A6900ECA212 /* Timepiece.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timepiece.framework; path = Carthage/Build/iOS/Timepiece.framework; sourceTree = "<group>"; };
+		A32A1FFE1A5D74DA00090CAA /* blogger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blogger.png; sourceTree = "<group>"; };
+		A32A1FFF1A5D74DA00090CAA /* evernote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = evernote.png; sourceTree = "<group>"; };
+		A32A20001A5D74DA00090CAA /* hatena_bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hatena_bookmark.png; sourceTree = "<group>"; };
+		A32A20011A5D74DA00090CAA /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		A385C9D01A5BE2A2008ADE98 /* PrivateConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		A385C9D21A5BEFBA008ADE98 /* BloggerFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerFetcher.swift; path = Fetcher/BloggerFetcher.swift; sourceTree = "<group>"; };
@@ -131,6 +139,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A32A1FFC1A5D74DA00090CAA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A32A1FFD1A5D74DA00090CAA /* icons */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A32A1FFD1A5D74DA00090CAA /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				A32A1FFE1A5D74DA00090CAA /* blogger.png */,
+				A32A1FFF1A5D74DA00090CAA /* evernote.png */,
+				A32A20001A5D74DA00090CAA /* hatena_bookmark.png */,
+				A32A20011A5D74DA00090CAA /* twitter.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 		A3C7CB4E1A539A1F00CA6696 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +192,7 @@
 				A3C7CB661A539A1F00CA6696 /* Images.xcassets */,
 				A3C7CB681A539A1F00CA6696 /* LaunchScreen.xib */,
 				A3C7CB5E1A539A1F00CA6696 /* Dots.xcdatamodeld */,
+				A32A1FFC1A5D74DA00090CAA /* Resources */,
 				A3C7CB5A1A539A1F00CA6696 /* Supporting Files */,
 			);
 			path = Dots;
@@ -321,6 +349,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A32A20051A5D74DA00090CAA /* twitter.png in Resources */,
+				A32A20041A5D74DA00090CAA /* hatena_bookmark.png in Resources */,
+				A32A20021A5D74DA00090CAA /* blogger.png in Resources */,
+				A32A20031A5D74DA00090CAA /* evernote.png in Resources */,
 				A3C7CB651A539A1F00CA6696 /* Main.storyboard in Resources */,
 				A3C7CB6A1A539A1F00CA6696 /* LaunchScreen.xib in Resources */,
 				A3C7CB671A539A1F00CA6696 /* Images.xcassets in Resources */,

@@ -83,19 +83,20 @@ class TweetsFetcher: NSObject {
     }
     
     func parseTweets(statuses: [JSONValue]) {
-        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let app = UIApplication.sharedApplication().delegate as AppDelegate
         var error: NSError?
         let fetchItemRequest = NSFetchRequest(entityName:"Item")
         let fetchUserRequest = NSFetchRequest(entityName:"User")
         
         outerLoop: for status: JSONValue in statuses {
+            // Item
             let id = status["id_str"].string!
             fetchItemRequest.predicate = NSPredicate(format: "id == %@", id)
-            let results = delegate.managedObjectContext!.executeFetchRequest(fetchItemRequest, error: &error)
+            let results = app.managedObjectContext!.executeFetchRequest(fetchItemRequest, error: &error)
             for resultItem in results! {
                 continue outerLoop
             }
-            var item: Item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: delegate.managedObjectContext!) as Item
+            var item: Item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: app.managedObjectContext!) as Item
             item.id = id
             item.text = status["text"].string!
             if status["entities"]["urls"][0] {
@@ -106,14 +107,15 @@ class TweetsFetcher: NSObject {
             }
             item.date = Utility.dateFromStringFormat("eee MMM dd HH:mm:ss ZZZZ yyyy", datetime: status["created_at"].string!)
             
+            // User
             let userId = status["user"]["id_str"].string!
             fetchUserRequest.predicate = NSPredicate(format: "id == %@", userId)
-            let users = delegate.managedObjectContext!.executeFetchRequest(fetchUserRequest, error: &error)
+            let users = app.managedObjectContext!.executeFetchRequest(fetchUserRequest, error: &error)
             for user in users! {
                 item.user = user as? User
                 continue outerLoop
             }
-            var user: User = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: delegate.managedObjectContext!) as User
+            var user: User = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: app.managedObjectContext!) as User
             user.id = userId
             if let screen = status["user"]["screen_name"].string {
                 user.screen_name = screen
@@ -129,6 +131,6 @@ class TweetsFetcher: NSObject {
             }
             item.user = user
         }
-        delegate.saveContext()
+        app.saveContext()
     }
 }
