@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Cycle" syncable="YES">
+    <entity name="Cycle" representedClassName="Cycle" syncable="YES">
         <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="cycle" inverseEntity="Item" syncable="YES"/>
     </entity>
-    <entity name="Entry" syncable="YES">
+    <entity name="Entry" representedClassName="Entry" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="entry" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
@@ -15,26 +17,33 @@
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entry" syncable="YES"/>
-        <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Service" syncable="YES"/>
+        <relationship name="cycle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cycle" inverseName="items" inverseEntity="Cycle" syncable="YES"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entry" inverseName="items" inverseEntity="Entry" syncable="YES"/>
+        <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Service" inverseName="items" inverseEntity="Service" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="items" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Service" syncable="YES">
+    <entity name="Service" representedClassName="Service" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="service" inverseEntity="Item" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="service" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="User" syncable="YES">
-        <attribute name="is_blocked" optional="YES" attributeType="Boolean" syncable="YES"/>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="is_blocked" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screen_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Service" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="user" inverseEntity="Item" syncable="YES"/>
+        <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Service" inverseName="users" inverseEntity="Service" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Cycle" positionX="-126" positionY="243" width="128" height="60"/>
-        <element name="Entry" positionX="-110" positionY="117" width="128" height="73"/>
-        <element name="Item" positionX="16" positionY="221" width="128" height="180"/>
-        <element name="Service" positionX="-261" positionY="117" width="128" height="90"/>
-        <element name="User" positionX="-90" positionY="261" width="128" height="118"/>
+        <element name="Cycle" positionX="-126" positionY="243" width="128" height="73"/>
+        <element name="Entry" positionX="-110" positionY="117" width="128" height="88"/>
+        <element name="Item" positionX="16" positionY="221" width="128" height="208"/>
+        <element name="Service" positionX="-261" positionY="117" width="128" height="118"/>
+        <element name="User" positionX="-90" positionY="261" width="128" height="163"/>
     </elements>
 </model>

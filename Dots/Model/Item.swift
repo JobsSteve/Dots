@@ -2,8 +2,8 @@
 //  Item.swift
 //  Dots
 //
-//  Created by knmsyk on 1/5/15.
-//  Copyright (c) 2015 knmsyk. All rights reserved.
+//  Created by Kouno, Masayuki on 1/7/15.
+//  Copyright (c) 2015 Kouno, Masayuki. All rights reserved.
 //
 
 import Foundation
@@ -19,7 +19,9 @@ class Item: NSManagedObject {
     @NSManaged var text: String?
     @NSManaged var title: String?
     @NSManaged var url: String
-    @NSManaged var entry: NSManagedObject
-    @NSManaged var service: NSManagedObject
+    @NSManaged var entry: Entry
+    @NSManaged var service: Service
+    @NSManaged var user: User?
+    @NSManaged var cycle: Cycle
 
 }

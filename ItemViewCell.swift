@@ -35,6 +35,6 @@ class ItemViewCell: UITableViewCell {
         }
         self.abstract?.text = item.text
         self.time?.text = Utility.stringFromDate("HH:mm:dd", date: item.date)
-//        self.userName.text = self.item?.title
+        self.userName?.text = "\(item.user?.name) \(item.user?.screen_name)"
     }
 }
