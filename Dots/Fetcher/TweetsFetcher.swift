@@ -104,7 +104,7 @@ class TweetsFetcher: NSObject {
             if status["entities"]["media"][0] {
                 item.picture = status["entities"]["media"][0]["media_url"].string!
             }
-            item.date = NSDate()
+            item.date = Utility.dateFromStringFormat("eee MMM dd HH:mm:ss ZZZZ yyyy", datetime: status["created_at"].string!)
             
             let userId = status["user"]["id_str"].string!
             fetchUserRequest.predicate = NSPredicate(format: "id == %@", userId)

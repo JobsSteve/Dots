@@ -22,6 +22,7 @@
 		A385C9FD1A5CAD59008ADE98 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FC1A5CAD59008ADE98 /* Cycle.swift */; };
 		A385C9FF1A5CAD59008ADE98 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FE1A5CAD59008ADE98 /* Item.swift */; };
 		A385CA051A5CBF24008ADE98 /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385CA041A5CBF24008ADE98 /* ItemViewCell.swift */; };
+		A385CA071A5D3DDA008ADE98 /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385CA061A5D3DDA008ADE98 /* UIImageView+Util.swift */; };
 		A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */; };
 		A3C7CB601A539A1F00CA6696 /* Dots.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5E1A539A1F00CA6696 /* Dots.xcdatamodeld */; };
 		A3C7CB621A539A1F00CA6696 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB611A539A1F00CA6696 /* ItemViewController.swift */; };
@@ -82,6 +83,7 @@
 		A385C9FC1A5CAD59008ADE98 /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cycle.swift; path = Model/Cycle.swift; sourceTree = "<group>"; };
 		A385C9FE1A5CAD59008ADE98 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
 		A385CA041A5CBF24008ADE98 /* ItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCell.swift; sourceTree = "<group>"; };
+		A385CA061A5D3DDA008ADE98 /* UIImageView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
 		A3C7CB571A539A1F00CA6696 /* Dots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C7CB5B1A539A1F00CA6696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				A3C7CB611A539A1F00CA6696 /* ItemViewController.swift */,
 				A385CA041A5CBF24008ADE98 /* ItemViewCell.swift */,
 				A3E746D71A5819F300E85D84 /* Utility.swift */,
+				A385CA061A5D3DDA008ADE98 /* UIImageView+Util.swift */,
 				A3C7CB631A539A1F00CA6696 /* Main.storyboard */,
 				A3C7CB661A539A1F00CA6696 /* Images.xcassets */,
 				A3C7CB681A539A1F00CA6696 /* LaunchScreen.xib */,
@@ -341,6 +344,7 @@
 				A385C9F71A5CAD58008ADE98 /* Entry.swift in Sources */,
 				A385C9F91A5CAD58008ADE98 /* Service.swift in Sources */,
 				A3C7CB621A539A1F00CA6696 /* ItemViewController.swift in Sources */,
+				A385CA071A5D3DDA008ADE98 /* UIImageView+Util.swift in Sources */,
 				A385C9D81A5BEFBA008ADE98 /* HatebuFetcher.swift in Sources */,
 				A385C9FF1A5CAD59008ADE98 /* Item.swift in Sources */,
 				A385C9D61A5BEFBA008ADE98 /* BloggerFetcher.swift in Sources */,

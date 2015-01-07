@@ -14,11 +14,20 @@ class ItemViewCell: UITableViewCell {
     @IBOutlet weak var abstract: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var time: UILabel!
+
+    @IBOutlet weak var serviceIcon: UIImageView!
+    @IBOutlet weak var userIcon: UIImageView!
+
     @IBOutlet weak var titleHeight: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        serviceIcon.clipToCircle()
+        userIcon.clipToCircle()
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(red: 238.0/255.0, green: 232.0/255.0, blue: 213.0/255.0, alpha: 1.0)
+        self.selectedBackgroundView = backgroundView
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -33,8 +42,19 @@ class ItemViewCell: UITableViewCell {
         } else {
             self.title?.text = item.title            
         }
-        self.abstract?.text = item.text
+        self.setAbstract(item.text!)
         self.time?.text = Utility.stringFromDate("HH:mm:dd", date: item.date)
         self.userName?.text = item.user?.name
+        if let url = item.user?.picture {
+            userIcon.loadImageAsync(url)
+        }
+    }
+    
+    func setAbstract(string: String) {
+        var paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        var attrString = NSMutableAttributedString(string: string)
+        attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+        abstract.attributedText = attrString
     }
 }
