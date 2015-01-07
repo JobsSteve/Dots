@@ -38,13 +38,13 @@ class HatebuFetcher: NSObject {
             let id = entry["id"].element?.text
 
             fetchRequest.predicate = NSPredicate(format: "id == %@", id!)
-            let results = app.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
+            let results = app.cdh.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
             for resultItem in results! {
                 let item = resultItem as Item
                 continue outerLoop
             }
             
-            var item: Item = NSEntityDescription.insertNewObjectForEntityForName(className, inManagedObjectContext: app.managedObjectContext!) as Item
+            var item: Item = NSEntityDescription.insertNewObjectForEntityForName(className, inManagedObjectContext: app.cdh.backgroundContext!) as Item
             item.id = id!
             if let title = entry["title"].element?.text {
                 item.title = title
@@ -59,7 +59,7 @@ class HatebuFetcher: NSObject {
                 item.date = Utility.dateFromStringFormat("yyyy-MM-dd'T'HH:mm:ssZ", datetime: date)
             }
         }
-        app.saveContext()
+        app.cdh.saveContext()
     }
     
 }

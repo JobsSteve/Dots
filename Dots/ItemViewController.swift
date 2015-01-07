@@ -31,7 +31,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         let fetchRequest = NSFetchRequest(entityName:className)
         var sorter: NSSortDescriptor = NSSortDescriptor(key: "date" , ascending: false)
         fetchRequest.sortDescriptors = [sorter]
-        let results = delegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
+        let results = delegate.cdh.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
         for resultItem in results! {
             self.items.append(resultItem as Item)
         }

@@ -22,6 +22,8 @@
 		A385C9FB1A5CAD59008ADE98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FA1A5CAD59008ADE98 /* User.swift */; };
 		A385C9FD1A5CAD59008ADE98 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FC1A5CAD59008ADE98 /* Cycle.swift */; };
 		A385C9FF1A5CAD59008ADE98 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385C9FE1A5CAD59008ADE98 /* Item.swift */; };
+		A385CA011A5CB46E008ADE98 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385CA001A5CB46E008ADE98 /* CoreDataStore.swift */; };
+		A385CA031A5CB4F4008ADE98 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385CA021A5CB4F4008ADE98 /* CoreDataHelper.swift */; };
 		A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */; };
 		A3C7CB601A539A1F00CA6696 /* Dots.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5E1A539A1F00CA6696 /* Dots.xcdatamodeld */; };
 		A3C7CB621A539A1F00CA6696 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB611A539A1F00CA6696 /* ItemViewController.swift */; };
@@ -82,6 +84,8 @@
 		A385C9FA1A5CAD59008ADE98 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		A385C9FC1A5CAD59008ADE98 /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cycle.swift; path = Model/Cycle.swift; sourceTree = "<group>"; };
 		A385C9FE1A5CAD59008ADE98 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
+		A385CA001A5CB46E008ADE98 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		A385CA021A5CB4F4008ADE98 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		A3C7CB571A539A1F00CA6696 /* Dots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C7CB5B1A539A1F00CA6696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				A3E746D21A58162800E85D84 /* Fetcher */,
 				A3C7CBB11A57895C00CA6696 /* Model */,
 				A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */,
+				A385CA001A5CB46E008ADE98 /* CoreDataStore.swift */,
+				A385CA021A5CB4F4008ADE98 /* CoreDataHelper.swift */,
 				A385C9D01A5BE2A2008ADE98 /* PrivateConstants.swift */,
 				A3C7CB611A539A1F00CA6696 /* ItemViewController.swift */,
 				A385C9E01A5C07FD008ADE98 /* ItemViewCell.swift */,
@@ -344,11 +350,13 @@
 				A385C9D81A5BEFBA008ADE98 /* HatebuFetcher.swift in Sources */,
 				A385C9FF1A5CAD59008ADE98 /* Item.swift in Sources */,
 				A385C9D61A5BEFBA008ADE98 /* BloggerFetcher.swift in Sources */,
+				A385CA031A5CB4F4008ADE98 /* CoreDataHelper.swift in Sources */,
 				A385C9E21A5C07FD008ADE98 /* ItemViewCell.swift in Sources */,
 				A385C9FB1A5CAD59008ADE98 /* User.swift in Sources */,
 				A3E746D81A5819F300E85D84 /* Utility.swift in Sources */,
 				A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */,
 				A385C9D11A5BE2A2008ADE98 /* PrivateConstants.swift in Sources */,
+				A385CA011A5CB46E008ADE98 /* CoreDataStore.swift in Sources */,
 				A385C9D71A5BEFBA008ADE98 /* DotsFetcher.swift in Sources */,
 				A385C9FD1A5CAD59008ADE98 /* Cycle.swift in Sources */,
 				A3C7CB601A539A1F00CA6696 /* Dots.xcdatamodeld in Sources */,
