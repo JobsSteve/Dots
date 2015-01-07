@@ -37,9 +37,9 @@ class HatebuFetcher: NSObject {
             let id = entry["id"].element?.text
 
             fetchRequest.predicate = NSPredicate(format: "id == %@", id!)
-            let results = app.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
-            for resultItem in results! {
-                let item = resultItem as Item
+            let items = app.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
+            for item in items! {
+                let item = item as Item
                 continue outerLoop
             }
             

@@ -23,7 +23,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        DotsFetcher.fetch()
+        fetchData()
         
         let delegate = UIApplication.sharedApplication().delegate as AppDelegate
         let className = "Item"
@@ -31,10 +31,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         let fetchRequest = NSFetchRequest(entityName:className)
         var sorter: NSSortDescriptor = NSSortDescriptor(key: "date" , ascending: false)
         fetchRequest.sortDescriptors = [sorter]
-        let results = delegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
-        for resultItem in results! {
-            self.items.append(resultItem as Item)
-        }
+        self.items = delegate.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as [Item]
         self.tableView.reloadData()
     }
     
@@ -42,6 +39,20 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func fetchData() {
+        let lastFetchKey = "last_fetch_date"
+        let date = NSUserDefaults.standardUserDefaults().objectForKey(lastFetchKey) as NSDate?
+        if date?.compare(3.hours.ago) == NSComparisonResult.OrderedDescending {
+            return
+        }
+        
+        DotsFetcher.fetch()
+        
+        NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey:lastFetchKey)
+    }
+    
+    // MARK: - UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
