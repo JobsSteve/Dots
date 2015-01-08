@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 knmsyk. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import CoreData
 import Alamofire

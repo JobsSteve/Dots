@@ -20,7 +20,7 @@ class DotsFetcher {
             let ago = today - day.days
             HatebuFetcher.fetchData(ago)
             BloggerFetcher.fetchData(ago)
-        }
+        }        
     }
     
     //    class func fetchGoogleHistory() {

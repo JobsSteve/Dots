@@ -89,6 +89,7 @@ class TweetsFetcher: NSObject {
         let fetchUserRequest = NSFetchRequest(entityName:"User")
         
         outerLoop: for status: JSONValue in statuses {
+            // Item
             let id = status["id_str"].string!
             fetchItemRequest.predicate = NSPredicate(format: "id == %@", id)
             let results = app.cdh.managedObjectContext!.executeFetchRequest(fetchItemRequest, error: &error)
@@ -96,7 +97,7 @@ class TweetsFetcher: NSObject {
                 continue outerLoop
             }
             var item: Item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: app.cdh.backgroundContext!) as Item
-            item.id = id
+           item.id = id
             item.text = status["text"].string!
             if status["entities"]["urls"][0] {
                 item.url = status["entities"]["urls"][0]["expanded_url"].string!
@@ -104,8 +105,9 @@ class TweetsFetcher: NSObject {
             if status["entities"]["media"][0] {
                 item.picture = status["entities"]["media"][0]["media_url"].string!
             }
-            item.date = NSDate()
+            item.created_at = Utility.dateFromStringFormat("eee MMM dd HH:mm:ss ZZZZ yyyy", datetime: status["created_at"].string!)
             
+            // User
             let userId = status["user"]["id_str"].string!
             fetchUserRequest.predicate = NSPredicate(format: "id == %@", userId)
             let users = app.cdh.managedObjectContext!.executeFetchRequest(fetchUserRequest, error: &error)

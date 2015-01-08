@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 knmsyk. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import CoreData
 import Alamofire
@@ -38,9 +37,9 @@ class HatebuFetcher: NSObject {
             let id = entry["id"].element?.text
 
             fetchRequest.predicate = NSPredicate(format: "id == %@", id!)
-            let results = app.cdh.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
-            for resultItem in results! {
-                let item = resultItem as Item
+            let items = app.cdh.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
+            for item in items! {
+                let item = item as Item
                 continue outerLoop
             }
             
@@ -56,7 +55,7 @@ class HatebuFetcher: NSObject {
                 item.url = url
             }
             if let date = entry["issued"].element?.text {
-                item.date = Utility.dateFromStringFormat("yyyy-MM-dd'T'HH:mm:ssZ", datetime: date)
+                item.created_at = Utility.dateFromStringFormat("yyyy-MM-dd'T'HH:mm:ssZ", datetime: date)
             }
         }
         app.cdh.saveContext()

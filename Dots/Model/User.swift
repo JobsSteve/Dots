@@ -13,7 +13,7 @@ import CoreData
 class User: NSManagedObject {
 
     @NSManaged var is_blocked: NSNumber
-    @NSManaged var name: String
+    @NSManaged var name: String?
     @NSManaged var screen_name: String?
     @NSManaged var picture: String
     @NSManaged var url: String
