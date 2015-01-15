@@ -23,8 +23,6 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       fetchData()
     }
     
     override func didReceiveMemoryWarning() {

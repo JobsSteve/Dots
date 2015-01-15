@@ -21,7 +21,7 @@ class TweetsFetcher: NSObject {
         self.swifter = Swifter(consumerKey: Constants.Twitter.ConsumerKey, consumerSecret: Constants.Twitter.SecretKey)
         super.init()
     }
-
+    
     func setUpTwitterAccount() {
         let accountStore = ACAccountStore()
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
@@ -49,7 +49,7 @@ class TweetsFetcher: NSObject {
         fetchFavorites()
         fetchOwnTweets()
     }
-
+    
     let failureHandler: ((NSError) -> Void) = {
         error in
         println("Error:" + error.localizedDescription)
@@ -63,7 +63,6 @@ class TweetsFetcher: NSObject {
                 (statuses: [JSONValue]?) in
                 
                 if let statuses = statuses {
-                    println(statuses)
                     self.parseTweets(statuses)
                 };
                 
@@ -96,8 +95,8 @@ class TweetsFetcher: NSObject {
             for resultItem in results! {
                 continue outerLoop
             }
-            var item: Item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: app.cdh.backgroundContext!) as Item
-           item.id = id
+            var item: Item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: app.cdh.managedObjectContext!) as Item
+            item.id = id
             item.text = status["text"].string!
             if status["entities"]["urls"][0] {
                 item.url = status["entities"]["urls"][0]["expanded_url"].string!
@@ -115,7 +114,7 @@ class TweetsFetcher: NSObject {
                 item.user = user as? User
                 continue outerLoop
             }
-            var user: User = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: app.cdh.backgroundContext!) as User
+            var user: User = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: app.cdh.managedObjectContext!) as User
             user.id = userId
             if let screen = status["user"]["screen_name"].string {
                 user.screen_name = screen
@@ -131,6 +130,6 @@ class TweetsFetcher: NSObject {
             }
             item.user = user
         }
-        app.cdh.saveContext()
+        app.cdh.saveContext(app.cdh.managedObjectContext!)
     }
 }
