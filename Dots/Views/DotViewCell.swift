@@ -1,5 +1,5 @@
 //
-//  ItemViewCell.swift
+//  DotViewCell.swift
 //  Dots
 //
 //  Created by Kouno, Masayuki on 1/6/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemViewCell: UITableViewCell {
+class DotViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var abstract: UILabel!
@@ -36,18 +36,18 @@ class ItemViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(item: Item) {
-        if item.title? == nil {
+    func configureCell(dot: Dot) {
+        if dot.title? == nil {
             self.title?.text = ""
             titleHeight.constant = 0
         } else {
-            self.title?.text = item.title            
+            self.title?.text = dot.title            
             titleHeight.constant = 40
         }
-        self.setAbstract(item.text)
-        self.time?.text = Utility.stringFromDate("HH:mm", date: item.created_at)
-        self.userName?.text = item.user?.name
-        if let url = item.user?.picture {
+        self.setAbstract(dot.text)
+        self.time?.text = Utility.stringFromDate("HH:mm", date: dot.created_at)
+        self.userName?.text = dot.user?.name
+        if let url = dot.user?.picture {
             userIcon.loadImageAsync(url)
         } else {
             userIcon.image = nil

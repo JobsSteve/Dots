@@ -84,34 +84,34 @@ class TweetsFetcher: NSObject {
     func parseTweets(statuses: [JSONValue]) {
         let app = UIApplication.sharedApplication().delegate as AppDelegate
         var error: NSError?
-        let fetchItemRequest = NSFetchRequest(entityName:"Item")
+        let fetchDotRequest = NSFetchRequest(entityName:"Dot")
         let fetchUserRequest = NSFetchRequest(entityName:"User")
         
         outerLoop: for status: JSONValue in statuses {
-            // Item
+            // Dot
             let id = status["id_str"].string!
-            fetchItemRequest.predicate = NSPredicate(format: "id == %@", id)
-            let results = app.cdh.managedObjectContext!.executeFetchRequest(fetchItemRequest, error: &error)
-            for resultItem in results! {
+            fetchDotRequest.predicate = NSPredicate(format: "id == %@", id)
+            let results = app.cdh.managedObjectContext!.executeFetchRequest(fetchDotRequest, error: &error)
+            for resultDot in results! {
                 continue outerLoop
             }
-            var item: Item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: app.cdh.managedObjectContext!) as Item
-            item.id = id
-            item.text = status["text"].string!
+            var dot: Dot = NSEntityDescription.insertNewObjectForEntityForName("Dot", inManagedObjectContext: app.cdh.managedObjectContext!) as Dot
+            dot.id = id
+            dot.text = status["text"].string!
             if status["entities"]["urls"][0] {
-                item.url = status["entities"]["urls"][0]["expanded_url"].string!
+                dot.url = status["entities"]["urls"][0]["expanded_url"].string!
             }
             if status["entities"]["media"][0] {
-                item.picture = status["entities"]["media"][0]["media_url"].string!
+                dot.picture = status["entities"]["media"][0]["media_url"].string!
             }
-            item.created_at = Utility.dateFromStringFormat("eee MMM dd HH:mm:ss ZZZZ yyyy", datetime: status["created_at"].string!)
+            dot.created_at = Utility.dateFromStringFormat("eee MMM dd HH:mm:ss ZZZZ yyyy", datetime: status["created_at"].string!)
             
             // User
             let userId = status["user"]["id_str"].string!
             fetchUserRequest.predicate = NSPredicate(format: "id == %@", userId)
             let users = app.cdh.managedObjectContext!.executeFetchRequest(fetchUserRequest, error: &error)
             for user in users! {
-                item.user = user as? User
+                dot.user = user as? User
                 continue outerLoop
             }
             var user: User = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: app.cdh.managedObjectContext!) as User
@@ -128,7 +128,7 @@ class TweetsFetcher: NSObject {
             if let url = status["user"]["url"].string {
                 user.url = url
             }
-            item.user = user
+            dot.user = user
         }
         app.cdh.saveContext(app.cdh.managedObjectContext!)
     }

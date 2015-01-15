@@ -13,6 +13,6 @@ import CoreData
 class Cycle: NSManagedObject {
 
     @NSManaged var day: NSNumber
-    @NSManaged var items: NSSet
+    @NSManaged var dots: NSSet
 
 }

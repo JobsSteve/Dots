@@ -19,6 +19,6 @@ class User: NSManagedObject {
     @NSManaged var url: String
     @NSManaged var id: String
     @NSManaged var service: Service
-    @NSManaged var items: NSSet
+    @NSManaged var dots: NSSet
 
 }

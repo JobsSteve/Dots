@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3070EAE1A67C7BB005D990E /* DotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3070EAD1A67C7BB005D990E /* DotDetailViewController.swift */; };
 		A31B6EFB1A597A6900ECA212 /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31B6EFA1A597A6900ECA212 /* Timepiece.framework */; };
 		A31B6EFC1A597A6900ECA212 /* Timepiece.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A31B6EFA1A597A6900ECA212 /* Timepiece.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A32A20021A5D74DA00090CAA /* blogger.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A1FFE1A5D74DA00090CAA /* blogger.png */; };
@@ -35,15 +36,15 @@
 		A3FD32261A67BD0900576FCF /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32201A67BD0900576FCF /* PrivateConstants.swift */; };
 		A3FD32281A67BD0900576FCF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32221A67BD0900576FCF /* UIImageView+Util.swift */; };
 		A3FD32291A67BD0900576FCF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32231A67BD0900576FCF /* Utility.swift */; };
-		A3FD322B1A67BD2000576FCF /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD322A1A67BD2000576FCF /* ItemViewController.swift */; };
-		A3FD322D1A67BD2A00576FCF /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD322C1A67BD2A00576FCF /* ItemViewCell.swift */; };
+		A3FD322B1A67BD2000576FCF /* DotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD322A1A67BD2000576FCF /* DotsViewController.swift */; };
+		A3FD322D1A67BD2A00576FCF /* DotViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD322C1A67BD2A00576FCF /* DotViewCell.swift */; };
 		A3FD32321A67BD3700576FCF /* BloggerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD322E1A67BD3700576FCF /* BloggerFetcher.swift */; };
 		A3FD32331A67BD3700576FCF /* DotsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD322F1A67BD3700576FCF /* DotsFetcher.swift */; };
 		A3FD32341A67BD3700576FCF /* HatebuFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32301A67BD3700576FCF /* HatebuFetcher.swift */; };
 		A3FD32351A67BD3700576FCF /* TweetsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32311A67BD3700576FCF /* TweetsFetcher.swift */; };
 		A3FD323B1A67BD4400576FCF /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32361A67BD4400576FCF /* Cycle.swift */; };
 		A3FD323C1A67BD4400576FCF /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32371A67BD4400576FCF /* Entry.swift */; };
-		A3FD323D1A67BD4400576FCF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32381A67BD4400576FCF /* Item.swift */; };
+		A3FD323D1A67BD4400576FCF /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32381A67BD4400576FCF /* Dot.swift */; };
 		A3FD323E1A67BD4400576FCF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32391A67BD4400576FCF /* Service.swift */; };
 		A3FD323F1A67BD4400576FCF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD323A1A67BD4400576FCF /* User.swift */; };
 		A3FD32411A67BDF600576FCF /* UIColor+Solarized.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD32401A67BDF600576FCF /* UIColor+Solarized.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A3070EAD1A67C7BB005D990E /* DotDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotDetailViewController.swift; path = Controllers/DotDetailViewController.swift; sourceTree = "<group>"; };
 		A31B6EFA1A597A6900ECA212 /* Timepiece.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timepiece.framework; path = Carthage/Build/iOS/Timepiece.framework; sourceTree = "<group>"; };
 		A32A1FFE1A5D74DA00090CAA /* blogger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blogger.png; sourceTree = "<group>"; };
 		A32A1FFF1A5D74DA00090CAA /* evernote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = evernote.png; sourceTree = "<group>"; };
@@ -105,15 +107,15 @@
 		A3FD32201A67BD0900576FCF /* PrivateConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivateConstants.swift; path = Commons/PrivateConstants.swift; sourceTree = "<group>"; };
 		A3FD32221A67BD0900576FCF /* UIImageView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+Util.swift"; path = "Commons/UIImageView+Util.swift"; sourceTree = "<group>"; };
 		A3FD32231A67BD0900576FCF /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Commons/Utility.swift; sourceTree = "<group>"; };
-		A3FD322A1A67BD2000576FCF /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemViewController.swift; path = Controllers/ItemViewController.swift; sourceTree = "<group>"; };
-		A3FD322C1A67BD2A00576FCF /* ItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemViewCell.swift; path = Views/ItemViewCell.swift; sourceTree = "<group>"; };
+		A3FD322A1A67BD2000576FCF /* DotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotsViewController.swift; path = Controllers/DotsViewController.swift; sourceTree = "<group>"; };
+		A3FD322C1A67BD2A00576FCF /* DotViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotViewCell.swift; path = Views/DotViewCell.swift; sourceTree = "<group>"; };
 		A3FD322E1A67BD3700576FCF /* BloggerFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BloggerFetcher.swift; path = Fetchers/BloggerFetcher.swift; sourceTree = "<group>"; };
 		A3FD322F1A67BD3700576FCF /* DotsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotsFetcher.swift; path = Fetchers/DotsFetcher.swift; sourceTree = "<group>"; };
 		A3FD32301A67BD3700576FCF /* HatebuFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HatebuFetcher.swift; path = Fetchers/HatebuFetcher.swift; sourceTree = "<group>"; };
 		A3FD32311A67BD3700576FCF /* TweetsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetsFetcher.swift; path = Fetchers/TweetsFetcher.swift; sourceTree = "<group>"; };
 		A3FD32361A67BD4400576FCF /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cycle.swift; path = Models/Cycle.swift; sourceTree = "<group>"; };
 		A3FD32371A67BD4400576FCF /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Models/Entry.swift; sourceTree = "<group>"; };
-		A3FD32381A67BD4400576FCF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Models/Item.swift; sourceTree = "<group>"; };
+		A3FD32381A67BD4400576FCF /* Dot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dot.swift; path = Models/Dot.swift; sourceTree = "<group>"; };
 		A3FD32391A67BD4400576FCF /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Models/Service.swift; sourceTree = "<group>"; };
 		A3FD323A1A67BD4400576FCF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		A3FD32401A67BDF600576FCF /* UIColor+Solarized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Solarized.swift"; path = "Commons/UIColor+Solarized.swift"; sourceTree = "<group>"; };
@@ -248,7 +250,7 @@
 			children = (
 				A3FD32361A67BD4400576FCF /* Cycle.swift */,
 				A3FD32371A67BD4400576FCF /* Entry.swift */,
-				A3FD32381A67BD4400576FCF /* Item.swift */,
+				A3FD32381A67BD4400576FCF /* Dot.swift */,
 				A3FD32391A67BD4400576FCF /* Service.swift */,
 				A3FD323A1A67BD4400576FCF /* User.swift */,
 			);
@@ -269,7 +271,7 @@
 		A3FD321B1A67BBFB00576FCF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A3FD322C1A67BD2A00576FCF /* ItemViewCell.swift */,
+				A3FD322C1A67BD2A00576FCF /* DotViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -277,7 +279,8 @@
 		A3FD321C1A67BC0300576FCF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A3FD322A1A67BD2000576FCF /* ItemViewController.swift */,
+				A3FD322A1A67BD2000576FCF /* DotsViewController.swift */,
+				A3070EAD1A67C7BB005D990E /* DotDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3FD32291A67BD0900576FCF /* Utility.swift in Sources */,
+				A3070EAE1A67C7BB005D990E /* DotDetailViewController.swift in Sources */,
 				A3FD323C1A67BD4400576FCF /* Entry.swift in Sources */,
 				A3FD32241A67BD0900576FCF /* CoreDataHelper.swift in Sources */,
 				A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */,
@@ -418,10 +422,10 @@
 				A3FD32281A67BD0900576FCF /* UIImageView+Util.swift in Sources */,
 				A3FD323E1A67BD4400576FCF /* Service.swift in Sources */,
 				A3FD32411A67BDF600576FCF /* UIColor+Solarized.swift in Sources */,
-				A3FD323D1A67BD4400576FCF /* Item.swift in Sources */,
-				A3FD322D1A67BD2A00576FCF /* ItemViewCell.swift in Sources */,
+				A3FD323D1A67BD4400576FCF /* Dot.swift in Sources */,
+				A3FD322D1A67BD2A00576FCF /* DotViewCell.swift in Sources */,
 				A3FD32341A67BD3700576FCF /* HatebuFetcher.swift in Sources */,
-				A3FD322B1A67BD2000576FCF /* ItemViewController.swift in Sources */,
+				A3FD322B1A67BD2000576FCF /* DotsViewController.swift in Sources */,
 				A3FD32331A67BD3700576FCF /* DotsFetcher.swift in Sources */,
 				A3FD32251A67BD0900576FCF /* CoreDataStore.swift in Sources */,
 				A3E746E41A5835D500E85D84 /* SWXMLHash.swift in Sources */,

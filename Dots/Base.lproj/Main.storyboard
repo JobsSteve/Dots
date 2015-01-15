@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item View Controller-->
+        <!--Dots View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ItemViewController" customModule="Dots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DotsViewController" customModule="Dots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.96470588239999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.79607843140000001" green="0.29411764709999999" blue="0.086274509799999996" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="ItemViewCell" rowHeight="135" id="qro-CY-BY5" customClass="ItemViewCell" customModule="Dots" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="DotViewCell" rowHeight="135" id="qro-CY-BY5" customClass="DotViewCell" customModule="Dots" customModuleProvider="target">
                                         <rect key="frame" x="-5" y="45" width="600" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qro-CY-BY5" id="qXd-QS-TmA">
@@ -146,11 +146,30 @@
                     <navigationItem key="navigationItem" id="bbJ-AK-vTd"/>
                     <connections>
                         <outlet property="tableView" destination="Rl0-0q-LxY" id="oGl-hK-5tS"/>
+                        <segue destination="G11-Xf-yMc" kind="show" identifier="toDotDetail" id="uKC-sN-6u2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="226"/>
+            <point key="canvasLocation" x="1158" y="226"/>
+        </scene>
+        <!--Dot Detail View Controller-->
+        <scene sceneID="Se8-Sk-3bs">
+            <objects>
+                <viewController id="G11-Xf-yMc" customClass="DotDetailViewController" customModule="Dots" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lRN-eC-YP1"/>
+                        <viewControllerLayoutGuide type="bottom" id="DrP-Qr-btU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RVr-UK-cXO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3x-xl-Wok" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="226"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GH0-Jl-iHl">

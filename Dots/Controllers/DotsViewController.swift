@@ -1,5 +1,5 @@
 //
-//  ItemViewController.swift
+//  DotsViewController.swift
 //  Dots
 //
 //  Created by knmsyk on 12/31/14.
@@ -10,11 +10,11 @@ import UIKit
 import CoreData
 import Timepiece
 
-class ItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class DotsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var items: [Item] = []
+    var dots: [Dot] = []
     let app = UIApplication.sharedApplication().delegate as AppDelegate
     
     required init(coder aDecoder: NSCoder) {
@@ -23,6 +23,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.fetchData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,7 +60,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
         let sort: NSSortDescriptor = NSSortDescriptor(key: "created_at", ascending: false)
         let predicate: NSPredicate? = NSPredicate(format: "created_at >= %@ && created_at < %@", days[0], days[1])
         
-        let request = NSFetchRequest(entityName: "Item")
+        let request = NSFetchRequest(entityName: "Dot")
         request.predicate = predicate
         request.sortDescriptors = [sort]
         request.returnsObjectsAsFaults = false
@@ -101,9 +102,9 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: ItemViewCell = tableView.dequeueReusableCellWithIdentifier("ItemViewCell") as ItemViewCell
-        let item = self.fetchedResultsController.objectAtIndexPath(indexPath) as Item
-        cell.configureCell(item)
+        var cell: DotViewCell = tableView.dequeueReusableCellWithIdentifier("DotViewCell") as DotViewCell
+        let dot = self.fetchedResultsController.objectAtIndexPath(indexPath) as Dot
+        cell.configureCell(dot)
         return cell
     }
     
@@ -123,6 +124,13 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected cell #\(indexPath.row)!")
+        performSegueWithIdentifier("toDotDetail", sender: tableView)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "toDotDetail") {
+            let vc = segue.destinationViewController as DotDetailViewController
+        }
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

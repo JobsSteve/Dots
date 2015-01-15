@@ -29,7 +29,7 @@ class HatebuFetcher: NSObject {
         let xml = SWXMLHash.parse(data)
         
         let app = UIApplication.sharedApplication().delegate as AppDelegate
-        let className = "Item"
+        let className = "Dot"
         var error: NSError?
         let fetchRequest = NSFetchRequest(entityName:className)
         
@@ -37,25 +37,25 @@ class HatebuFetcher: NSObject {
             let id = entry["id"].element?.text
 
             fetchRequest.predicate = NSPredicate(format: "id == %@", id!)
-            let items = app.cdh.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
-            for item in items! {
-                let item = item as Item
+            let dots = app.cdh.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error)
+            for dot in dots! {
+                let dot = dot as Dot
                 continue outerLoop
             }
             
-            var item: Item = NSEntityDescription.insertNewObjectForEntityForName(className, inManagedObjectContext: app.cdh.backgroundContext!) as Item
-            item.id = id!
+            var dot: Dot = NSEntityDescription.insertNewObjectForEntityForName(className, inManagedObjectContext: app.cdh.backgroundContext!) as Dot
+            dot.id = id!
             if let title = entry["title"].element?.text {
-                item.title = title
+                dot.title = title
             }
             if let text = entry["summary"].element?.text {
-                item.text = text
+                dot.text = text
             }
             if let url = entry["link"].withAttr("rel", "related").element?.attributes["href"] {
-                item.url = url
+                dot.url = url
             }
             if let date = entry["issued"].element?.text {
-                item.created_at = Utility.dateFromStringFormat("yyyy-MM-dd'T'HH:mm:ssZ", datetime: date)
+                dot.created_at = Utility.dateFromStringFormat("yyyy-MM-dd'T'HH:mm:ssZ", datetime: date)
             }
         }
         app.cdh.saveContext()

@@ -14,6 +14,6 @@ class Entry: NSManagedObject {
 
     @NSManaged var date: NSDate
     @NSManaged var type: NSNumber
-    @NSManaged var items: NSSet
+    @NSManaged var dots: NSSet
 
 }

@@ -1,5 +1,5 @@
 //
-//  Item.swift
+//  Dot.swift
 //  Dots
 //
 //  Created by Kouno, Masayuki on 1/7/15.
@@ -9,8 +9,8 @@
 import Foundation
 import CoreData
 
-@objc(Item)
-class Item: NSManagedObject {
+@objc(Dot)
+class Dot: NSManagedObject {
 
     @NSManaged var id: String
     @NSManaged var is_active: NSNumber

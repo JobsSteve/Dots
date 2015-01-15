@@ -15,7 +15,7 @@ class Service: NSManagedObject {
     @NSManaged var id: String
     @NSManaged var name: String
     @NSManaged var token: String
-    @NSManaged var items: NSSet
+    @NSManaged var dots: NSSet
     @NSManaged var users: NSSet
 
 }
