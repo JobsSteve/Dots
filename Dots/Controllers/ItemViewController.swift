@@ -116,8 +116,8 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let view = view as UITableViewHeaderFooterView
-        view.contentView.backgroundColor = SorarizedColors.Base2
-        view.textLabel.textColor = SorarizedColors.Base02
+        view.contentView.backgroundColor = UIColor.solarizedBase2()
+        view.textLabel.textColor = UIColor.solarizedBase02()
         view.textLabel.font = UIFont(name: "Arial", size: 14)
     }
     
@@ -135,7 +135,7 @@ class ItemViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.editing = false
             println("Delete")
         }
-        deleteAction.backgroundColor = SorarizedColors.Red
+        deleteAction.backgroundColor = UIColor.solarizedRed()
         return [deleteAction]
     }
     

@@ -26,7 +26,7 @@ class ItemViewCell: UITableViewCell {
         serviceIcon.clipToCircle()
         userIcon.clipToCircle()
         let backgroundView = UIView()
-        backgroundView.backgroundColor = SorarizedColors.Alpha.Green01
+        backgroundView.backgroundColor = UIColor.solarizedAlphaGreen()
         self.selectedBackgroundView = backgroundView
     }
 
