@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="226"/>
+            <point key="canvasLocation" x="1656" y="226"/>
         </scene>
         <!--Dot Detail View Controller-->
         <scene sceneID="Se8-Sk-3bs">
@@ -169,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n3x-xl-Wok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855" y="226"/>
+            <point key="canvasLocation" x="2399" y="226"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GH0-Jl-iHl">
@@ -186,12 +186,44 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HcT-pZ-Jvh"/>
+                        <segue destination="Jjq-GQ-MCv" kind="relationship" relationship="rootViewController" id="ggQ-1l-BOf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sTO-JY-muv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="226"/>
+            <point key="canvasLocation" x="162" y="226"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="rkO-wJ-apL">
+            <objects>
+                <tableViewController id="Jjq-GQ-MCv" customClass="EntryTableViewController" customModule="Dots" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ysz-GY-Rvb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gPB-8E-Xdc">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gPB-8E-Xdc" id="eSB-16-OQY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Jjq-GQ-MCv" id="JQQ-Ci-njA"/>
+                            <outlet property="delegate" destination="Jjq-GQ-MCv" id="AVn-tE-QbV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="jpQ-HW-vjp">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="xby-Vb-lRg"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="UDe-VQ-Wx3"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65X-5I-DDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="230"/>
         </scene>
     </scenes>
 </document>

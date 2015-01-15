@@ -8,12 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A3070EAE1A67C7BB005D990E /* DotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3070EAD1A67C7BB005D990E /* DotDetailViewController.swift */; };
+		A3070EB01A67CC62005D990E /* EntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3070EAF1A67CC62005D990E /* EntryTableViewController.swift */; };
 		A31B6EFB1A597A6900ECA212 /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31B6EFA1A597A6900ECA212 /* Timepiece.framework */; };
 		A31B6EFC1A597A6900ECA212 /* Timepiece.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A31B6EFA1A597A6900ECA212 /* Timepiece.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A32A20021A5D74DA00090CAA /* blogger.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A1FFE1A5D74DA00090CAA /* blogger.png */; };
-		A32A20031A5D74DA00090CAA /* evernote.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A1FFF1A5D74DA00090CAA /* evernote.png */; };
-		A32A20041A5D74DA00090CAA /* hatena_bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A20001A5D74DA00090CAA /* hatena_bookmark.png */; };
-		A32A20051A5D74DA00090CAA /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = A32A20011A5D74DA00090CAA /* twitter.png */; };
 		A3603F081A58D3A000ACE0DE /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */; };
 		A3603F091A58D3A000ACE0DE /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C7CB5C1A539A1F00CA6696 /* AppDelegate.swift */; };
@@ -79,11 +76,8 @@
 
 /* Begin PBXFileReference section */
 		A3070EAD1A67C7BB005D990E /* DotDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotDetailViewController.swift; path = Controllers/DotDetailViewController.swift; sourceTree = "<group>"; };
+		A3070EAF1A67CC62005D990E /* EntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryTableViewController.swift; path = Controllers/EntryTableViewController.swift; sourceTree = "<group>"; };
 		A31B6EFA1A597A6900ECA212 /* Timepiece.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timepiece.framework; path = Carthage/Build/iOS/Timepiece.framework; sourceTree = "<group>"; };
-		A32A1FFE1A5D74DA00090CAA /* blogger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blogger.png; sourceTree = "<group>"; };
-		A32A1FFF1A5D74DA00090CAA /* evernote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = evernote.png; sourceTree = "<group>"; };
-		A32A20001A5D74DA00090CAA /* hatena_bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hatena_bookmark.png; sourceTree = "<group>"; };
-		A32A20011A5D74DA00090CAA /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		A3603F071A58D3A000ACE0DE /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		A3C7CB571A539A1F00CA6696 /* Dots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C7CB5B1A539A1F00CA6696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,25 +141,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A32A1FFC1A5D74DA00090CAA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A32A1FFD1A5D74DA00090CAA /* icons */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		A32A1FFD1A5D74DA00090CAA /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				A32A1FFE1A5D74DA00090CAA /* blogger.png */,
-				A32A1FFF1A5D74DA00090CAA /* evernote.png */,
-				A32A20001A5D74DA00090CAA /* hatena_bookmark.png */,
-				A32A20011A5D74DA00090CAA /* twitter.png */,
-			);
-			path = icons;
-			sourceTree = "<group>";
-		};
 		A3C7CB4E1A539A1F00CA6696 = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +173,6 @@
 				A3C7CB661A539A1F00CA6696 /* Images.xcassets */,
 				A3C7CB681A539A1F00CA6696 /* LaunchScreen.xib */,
 				A3C7CB5E1A539A1F00CA6696 /* Dots.xcdatamodeld */,
-				A32A1FFC1A5D74DA00090CAA /* Resources */,
 				A3C7CB5A1A539A1F00CA6696 /* Supporting Files */,
 			);
 			path = Dots;
@@ -281,6 +255,7 @@
 			children = (
 				A3FD322A1A67BD2000576FCF /* DotsViewController.swift */,
 				A3070EAD1A67C7BB005D990E /* DotDetailViewController.swift */,
+				A3070EAF1A67CC62005D990E /* EntryTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -385,10 +360,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A32A20051A5D74DA00090CAA /* twitter.png in Resources */,
-				A32A20041A5D74DA00090CAA /* hatena_bookmark.png in Resources */,
-				A32A20021A5D74DA00090CAA /* blogger.png in Resources */,
-				A32A20031A5D74DA00090CAA /* evernote.png in Resources */,
 				A3C7CB651A539A1F00CA6696 /* Main.storyboard in Resources */,
 				A3C7CB6A1A539A1F00CA6696 /* LaunchScreen.xib in Resources */,
 				A3C7CB671A539A1F00CA6696 /* Images.xcassets in Resources */,
@@ -413,6 +384,7 @@
 				A3070EAE1A67C7BB005D990E /* DotDetailViewController.swift in Sources */,
 				A3FD323C1A67BD4400576FCF /* Entry.swift in Sources */,
 				A3FD32241A67BD0900576FCF /* CoreDataHelper.swift in Sources */,
+				A3070EB01A67CC62005D990E /* EntryTableViewController.swift in Sources */,
 				A3C7CB5D1A539A1F00CA6696 /* AppDelegate.swift in Sources */,
 				A3FD32321A67BD3700576FCF /* BloggerFetcher.swift in Sources */,
 				A3C7CB601A539A1F00CA6696 /* Dots.xcdatamodeld in Sources */,
